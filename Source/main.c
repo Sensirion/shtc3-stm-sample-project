@@ -51,6 +51,9 @@ int main(void)
   // demonstartion of SoftReset command
   error = SHTC3_SoftReset();
 
+  // wait for sensor to reset
+  DelayMicroSeconds(100);
+
   // demonstartion of GetId command
   error = SHTC3_GetId(&id);
 
