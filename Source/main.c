@@ -45,8 +45,14 @@ int main(void)
   // initalize sensor module with the i2c address 0x70
   SHTC3_Init(0x70);
 
+  // wake up the sensor from sleep mode
+  SHTC3_Wakeup();
+
   // demonstartion of SoftReset command
   error = SHTC3_SoftReset();
+
+  // wait for sensor to reset
+  DelayMicroSeconds(100);
 
   // demonstartion of GetId command
   error = SHTC3_GetId(&id);
